@@ -1,0 +1,4 @@
+Fri Mar 15 2024 14:15:8 } [SB] error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+Fri Mar 15 2024 14:20:33 } [SB] error: Connection terminated unexpectedly
+Fri Mar 15 2024 14:25:49 } [SB] error: Connection terminated unexpectedly
+Fri Mar 15 2024 14:37:41 } [SB] error: Connection terminated unexpectedly

@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\projects\\Canopus\\university-management-core-service\\logs\\winston\\successes\\.0be7602258b543ae7901bb09dda5d1d25d5815b2-audit.json",
+    "files": [
+        {
+            "date": 1710168975526,
+            "name": "D:\\projects\\Canopus\\university-management-core-service\\logs\\winston\\successes\\srabon-2024-11-03-20-success.log",
+            "hash": "572ffb00494167e18017955f50b1b50ebdd207727a012d14263bcbf93506611b"
+        }
+    ],
+    "hashType": "sha256"
+}
