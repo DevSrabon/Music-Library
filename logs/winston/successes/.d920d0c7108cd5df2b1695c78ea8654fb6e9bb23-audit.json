@@ -1,60 +1,65 @@
 {
-  "keep": {
-    "days": true,
-    "amount": 14
-  },
-  "auditLog": "D:\\music-libary\\logs\\winston\\successes\\.d920d0c7108cd5df2b1695c78ea8654fb6e9bb23-audit.json",
-  "files": [
-    {
-      "date": 1710489781666,
-      "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-14-success.log",
-      "hash": "fc0bfa7f2609d5b65024f12b3f9d6a982a1b2b277b61d447e36cab0cacbf16b8"
+    "keep": {
+        "days": true,
+        "amount": 14
     },
-    {
-      "date": 1710495052835,
-      "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-15-success.log",
-      "hash": "3e7a77e6bccaffef6aebb35474ac3f60b9da8b85ddbd2a8676941595872d965a"
-    },
-    {
-      "date": 1710496822506,
-      "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-16-success.log",
-      "hash": "53cbe6a342c7de76921b4aafc3ac874dd8834388df86134ed7069377812c27c0"
-    },
-    {
-      "date": 1710508909477,
-      "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-19-success.log",
-      "hash": "b467cb49d6168352910ce1dfa5422c2f40ea8e1a5743ed37b36fb635df062f91"
-    },
-    {
-      "date": 1710511222625,
-      "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-20-success.log",
-      "hash": "1ac551b20fcd23b78bdd7f093a82d86a36c41be013ec233d61ad0ee2b37bff58"
-    },
-    {
-      "date": 1710514808502,
-      "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-21-success.log",
-      "hash": "40cf3180ea7de1b748b6a80321ed4ec10ef9b481953f9e14a783d7560e1af18b"
-    },
-    {
-      "date": 1710518448520,
-      "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-22-success.log",
-      "hash": "29d6cd7e4b7b52b25d6fa304a0da9126da5c03e401b9b8218eed7e6b21df8297"
-    },
-    {
-      "date": 1710522056722,
-      "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-23-success.log",
-      "hash": "b9f645c7ba0c74925cc81f208141d7aab7e7431a6e98a35965b71c6583831258"
-    },
-    {
-      "date": 1710529130802,
-      "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-16-03-00-success.log",
-      "hash": "229a27fc64075a7b2e33b4210e1aea4b07b52771fe369f096d0e371ac635d1a7"
-    },
-    {
-      "date": 1710529593478,
-      "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-16-03-01-success.log",
-      "hash": "43a78208754dae9e12014fe9b4c313cab5f06d2e0df4b6a999e51d466e121a2c"
-    }
-  ],
-  "hashType": "sha256"
+    "auditLog": "D:\\music-libary\\logs\\winston\\successes\\.d920d0c7108cd5df2b1695c78ea8654fb6e9bb23-audit.json",
+    "files": [
+        {
+            "date": 1710489781666,
+            "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-14-success.log",
+            "hash": "fc0bfa7f2609d5b65024f12b3f9d6a982a1b2b277b61d447e36cab0cacbf16b8"
+        },
+        {
+            "date": 1710495052835,
+            "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-15-success.log",
+            "hash": "3e7a77e6bccaffef6aebb35474ac3f60b9da8b85ddbd2a8676941595872d965a"
+        },
+        {
+            "date": 1710496822506,
+            "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-16-success.log",
+            "hash": "53cbe6a342c7de76921b4aafc3ac874dd8834388df86134ed7069377812c27c0"
+        },
+        {
+            "date": 1710508909477,
+            "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-19-success.log",
+            "hash": "b467cb49d6168352910ce1dfa5422c2f40ea8e1a5743ed37b36fb635df062f91"
+        },
+        {
+            "date": 1710511222625,
+            "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-20-success.log",
+            "hash": "1ac551b20fcd23b78bdd7f093a82d86a36c41be013ec233d61ad0ee2b37bff58"
+        },
+        {
+            "date": 1710514808502,
+            "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-21-success.log",
+            "hash": "40cf3180ea7de1b748b6a80321ed4ec10ef9b481953f9e14a783d7560e1af18b"
+        },
+        {
+            "date": 1710518448520,
+            "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-22-success.log",
+            "hash": "29d6cd7e4b7b52b25d6fa304a0da9126da5c03e401b9b8218eed7e6b21df8297"
+        },
+        {
+            "date": 1710522056722,
+            "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-15-03-23-success.log",
+            "hash": "b9f645c7ba0c74925cc81f208141d7aab7e7431a6e98a35965b71c6583831258"
+        },
+        {
+            "date": 1710529130802,
+            "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-16-03-00-success.log",
+            "hash": "229a27fc64075a7b2e33b4210e1aea4b07b52771fe369f096d0e371ac635d1a7"
+        },
+        {
+            "date": 1710529593478,
+            "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-16-03-01-success.log",
+            "hash": "43a78208754dae9e12014fe9b4c313cab5f06d2e0df4b6a999e51d466e121a2c"
+        },
+        {
+            "date": 1710592283348,
+            "name": "D:\\music-libary\\logs\\winston\\successes\\srabon-2024-16-03-18-success.log",
+            "hash": "3756a153c29ee2942470e4c16f5432c42594949de557e27d641f6194791a9431"
+        }
+    ],
+    "hashType": "sha256"
 }
