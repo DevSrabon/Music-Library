@@ -12,6 +12,12 @@ type IApiResponse<T> = {
   data?: T | null;
 };
 
+/**
+ * send response
+ * @param res express response
+ * @param data response data
+ * @returns void
+ */
 const sendResponse = <T>(res: Response, data: IApiResponse<T>): void => {
   const responseData: IApiResponse<T> = {
     statusCode: data.statusCode,

@@ -1,60 +1,60 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "D:\\music-libary\\logs\\winston\\errors\\.6b48b99d6cc88853e31c9153c53a1c5aadb92aea-audit.json",
+  "files": [
+    {
+      "date": 1710489781672,
+      "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-14-error.log",
+      "hash": "86a68506173279309cf3c7a72c82fad207aca11ee2263b11d09ce8d186c16412"
     },
-    "auditLog": "D:\\music-libary\\logs\\winston\\errors\\.6b48b99d6cc88853e31c9153c53a1c5aadb92aea-audit.json",
-    "files": [
-        {
-            "date": 1710489781672,
-            "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-14-error.log",
-            "hash": "86a68506173279309cf3c7a72c82fad207aca11ee2263b11d09ce8d186c16412"
-        },
-        {
-            "date": 1710495052842,
-            "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-15-error.log",
-            "hash": "d64b80a749b81ad7b0e392c3c5bfb538d7d3e8aba8f63d0cde88f6918adc12ee"
-        },
-        {
-            "date": 1710496822515,
-            "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-16-error.log",
-            "hash": "bb1cb379f75f8c77abf29e7f9a580e3b1caa82eeda722e12e3c0001871dba801"
-        },
-        {
-            "date": 1710508909566,
-            "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-19-error.log",
-            "hash": "225f665b668d93f9d20b044f6b92ebf1b7f4d06a58f8a95bd53b23566f317ed3"
-        },
-        {
-            "date": 1710511222635,
-            "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-20-error.log",
-            "hash": "208a4e9a9f97b51cbc45a890b211705287280584776c15fafa2610267353fed6"
-        },
-        {
-            "date": 1710514808511,
-            "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-21-error.log",
-            "hash": "6b9f5b41f5a6a6595c73423b1f10ec17bbc59e4481ed5b64371966b8a2c3029c"
-        },
-        {
-            "date": 1710518448529,
-            "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-22-error.log",
-            "hash": "34198caa72c2290ce2d3854b827f6bceb2c3e7e0b7a60fe97cee3ddd7322cb4d"
-        },
-        {
-            "date": 1710522056732,
-            "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-23-error.log",
-            "hash": "10c14a63aa67f9248368a677a11a9fcd43f40bd410143bccfe2c15905a559b1b"
-        },
-        {
-            "date": 1710529130809,
-            "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-16-03-00-error.log",
-            "hash": "ee6fad836315d6fe056b8f44bdd7f32b38a7e6fe1080a7995bceabbc068db062"
-        },
-        {
-            "date": 1710529593500,
-            "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-16-03-01-error.log",
-            "hash": "41255d08d5570fd0d361aaeafb8d901b8b8d067eade2bac7ca174295293c0620"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1710495052842,
+      "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-15-error.log",
+      "hash": "d64b80a749b81ad7b0e392c3c5bfb538d7d3e8aba8f63d0cde88f6918adc12ee"
+    },
+    {
+      "date": 1710496822515,
+      "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-16-error.log",
+      "hash": "bb1cb379f75f8c77abf29e7f9a580e3b1caa82eeda722e12e3c0001871dba801"
+    },
+    {
+      "date": 1710508909566,
+      "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-19-error.log",
+      "hash": "225f665b668d93f9d20b044f6b92ebf1b7f4d06a58f8a95bd53b23566f317ed3"
+    },
+    {
+      "date": 1710511222635,
+      "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-20-error.log",
+      "hash": "208a4e9a9f97b51cbc45a890b211705287280584776c15fafa2610267353fed6"
+    },
+    {
+      "date": 1710514808511,
+      "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-21-error.log",
+      "hash": "6b9f5b41f5a6a6595c73423b1f10ec17bbc59e4481ed5b64371966b8a2c3029c"
+    },
+    {
+      "date": 1710518448529,
+      "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-22-error.log",
+      "hash": "34198caa72c2290ce2d3854b827f6bceb2c3e7e0b7a60fe97cee3ddd7322cb4d"
+    },
+    {
+      "date": 1710522056732,
+      "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-15-03-23-error.log",
+      "hash": "10c14a63aa67f9248368a677a11a9fcd43f40bd410143bccfe2c15905a559b1b"
+    },
+    {
+      "date": 1710529130809,
+      "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-16-03-00-error.log",
+      "hash": "ee6fad836315d6fe056b8f44bdd7f32b38a7e6fe1080a7995bceabbc068db062"
+    },
+    {
+      "date": 1710529593500,
+      "name": "D:\\music-libary\\logs\\winston\\errors\\srabon-2024-16-03-01-error.log",
+      "hash": "41255d08d5570fd0d361aaeafb8d901b8b8d067eade2bac7ca174295293c0620"
+    }
+  ],
+  "hashType": "sha256"
 }

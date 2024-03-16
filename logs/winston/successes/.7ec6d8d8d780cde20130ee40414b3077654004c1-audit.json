@@ -1,0 +1,50 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "D:\\srabon\\Music-Library\\logs\\winston\\successes\\.7ec6d8d8d780cde20130ee40414b3077654004c1-audit.json",
+  "files": [
+    {
+      "date": 1710563215512,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\successes\\srabon-2024-16-03-10-success.log",
+      "hash": "50f944fc81bfb13409af9b931b446faab189329df0198077985ed3d5a425be48"
+    },
+    {
+      "date": 1710565207091,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\successes\\srabon-2024-16-03-11-success.log",
+      "hash": "ce7d1b796b57bc1b91177645dff1b8da262d3478b960ebeb6c9cd491da52a9e5"
+    },
+    {
+      "date": 1710568841462,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\successes\\srabon-2024-16-03-12-success.log",
+      "hash": "9aacb1fa5cd56989ee672d446231664c0d6db06a8cef0de5e3631e4a5dd75403"
+    },
+    {
+      "date": 1710572494107,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\successes\\srabon-2024-16-03-13-success.log",
+      "hash": "29c6b67bc0de7d1000eec074379e730dd59b3e70264b99699eac3f795ec907a4"
+    },
+    {
+      "date": 1710581411354,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\successes\\srabon-2024-16-03-15-success.log",
+      "hash": "819bbe11e1f932861a8322e19ce449392408226672401f5c802c92680112dd9e"
+    },
+    {
+      "date": 1710583980418,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\successes\\srabon-2024-16-03-16-success.log",
+      "hash": "093096abc8fa4f9e92efb3d6875a7aa2e7d4411da9f19e428221f16eeeb1e811"
+    },
+    {
+      "date": 1710586801005,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\successes\\srabon-2024-16-03-17-success.log",
+      "hash": "68ce6bcd834d0b67a6f95b489af22ac48ddf09c74d11dfaa9ed8c2794a2dc791"
+    },
+    {
+      "date": 1710590670288,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\successes\\srabon-2024-16-03-18-success.log",
+      "hash": "b1cea56357ad322eab135580f781d2f1969043c242bdc864871004961a2d29fb"
+    }
+  ],
+  "hashType": "sha256"
+}

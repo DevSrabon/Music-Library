@@ -1,15 +1,15 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
-    },
-    "auditLog": "D:\\projects\\Canopus\\university-management-core-service\\logs\\winston\\errors\\.47c8440ed2ae4c50ee26c563d5e8994b57328a70-audit.json",
-    "files": [
-        {
-            "date": 1710168975531,
-            "name": "D:\\projects\\Canopus\\university-management-core-service\\logs\\winston\\errors\\srabon-2024-11-03-20-error.log",
-            "hash": "d7da871d4bc1aa4d0f9d5d232603d4d74fca2dbc0fe1f7b76d7f9b7a70c9f40f"
-        }
-    ],
-    "hashType": "sha256"
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "D:\\projects\\Canopus\\university-management-core-service\\logs\\winston\\errors\\.47c8440ed2ae4c50ee26c563d5e8994b57328a70-audit.json",
+  "files": [
+    {
+      "date": 1710168975531,
+      "name": "D:\\projects\\Canopus\\university-management-core-service\\logs\\winston\\errors\\srabon-2024-11-03-20-error.log",
+      "hash": "d7da871d4bc1aa4d0f9d5d232603d4d74fca2dbc0fe1f7b76d7f9b7a70c9f40f"
+    }
+  ],
+  "hashType": "sha256"
 }

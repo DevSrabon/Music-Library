@@ -1,0 +1,50 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "D:\\srabon\\Music-Library\\logs\\winston\\errors\\.d2710957ae6eb3b0a232b583dd630b6b98d1f036-audit.json",
+  "files": [
+    {
+      "date": 1710563215539,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\errors\\srabon-2024-16-03-10-error.log",
+      "hash": "ef6990f6f0c61fafd3016fa7c438b4e1c91a521439114f3b4f025e9492651298"
+    },
+    {
+      "date": 1710565207102,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\errors\\srabon-2024-16-03-11-error.log",
+      "hash": "c456a0419457cf26589a7ca068eba0c3de7aa998ad1fbd3bba6c9b0ce7304a21"
+    },
+    {
+      "date": 1710568841472,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\errors\\srabon-2024-16-03-12-error.log",
+      "hash": "ba96cd03cdb88bea697f0b185e3dac8952d8a2cd14257fcaae624c20da3e3e10"
+    },
+    {
+      "date": 1710572494118,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\errors\\srabon-2024-16-03-13-error.log",
+      "hash": "f85ca00de7528db825a2ff46c53948fdd938930b7fa4b80bf97967155335c119"
+    },
+    {
+      "date": 1710581411366,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\errors\\srabon-2024-16-03-15-error.log",
+      "hash": "d9c85952760498358c98da790b446636c8d7b708f607e79f2e0b4be5694cf1e4"
+    },
+    {
+      "date": 1710583980433,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\errors\\srabon-2024-16-03-16-error.log",
+      "hash": "b3d3182459ee16abc6df07f91d0489ff58797bf29a589998e7ed890db399a6be"
+    },
+    {
+      "date": 1710586801014,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\errors\\srabon-2024-16-03-17-error.log",
+      "hash": "775424a9b3d5245efdc0573917be853b21faf72a3d64c47b9a08c3bd293ed891"
+    },
+    {
+      "date": 1710590670297,
+      "name": "D:\\srabon\\Music-Library\\logs\\winston\\errors\\srabon-2024-16-03-18-error.log",
+      "hash": "8ec8c2e0b281ba25698ba9d4aa799e2d07cecd7dee4e0f4d38db01b197d7f498"
+    }
+  ],
+  "hashType": "sha256"
+}

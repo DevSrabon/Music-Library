@@ -36,7 +36,7 @@ const getAllFromDB = catchAsync(async (req, res) => {
   const { page, limit, skip, sortBy, sortOrder } =
     paginationHelpers.calculatePagination(paginationOptions);
 
-  let query = `SELECT id, username, email FROM users`;
+  let query = `SELECT id, username, email, created_at, updated_at FROM users`;
 
   if (Object.keys(filtersData).length > 0 || searchTerm) {
     query += ` WHERE `;

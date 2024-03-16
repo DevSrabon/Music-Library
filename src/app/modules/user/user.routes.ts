@@ -1,4 +1,5 @@
 import express from 'express';
+import auth from '../../middlewares/auth';
 import validateRequest from '../../middlewares/validateRequest';
 import { UserController } from './user.controller';
 import { UserValidation } from './user.validation';
@@ -10,6 +11,10 @@ router.post(
   validateRequest(UserValidation.createUserJoiSchema),
   UserController.insertIntoDB,
 );
+
+// auth middleware
+router.use(auth());
+
 router.get('/', UserController.getAllFromDB);
 router.patch(
   '/:id',
