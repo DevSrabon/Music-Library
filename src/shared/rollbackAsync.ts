@@ -14,7 +14,6 @@ const rollbackAsync =
     try {
       await client.query('BEGIN');
       await fn(req, res, next);
-
       await client.query('COMMIT');
     } catch (error) {
       await client.query('ROLLBACK');

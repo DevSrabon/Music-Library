@@ -51,7 +51,7 @@ const getAllFromDB = catchAsync(async (req, res) => {
     //dynamic filtering with exact match
     if (Object.keys(filtersData).length > 0) {
       query += `${Object.keys(filtersData)
-        .map(key => `${key}='${filtersData[key]}'`)
+        .map(key => `LOWER(${key}) = LOWER('${filtersData[key]}')`)
         .join(` OR `)}`;
     }
   }
@@ -104,6 +104,14 @@ const deleteInDB = catchAsync(async (req, res) => {
   const { id } = req.params;
   const query = `DELETE FROM users WHERE id = $1 RETURNING id, username, email, created_at, updated_at`;
   const result: IUser = (await db.query(query, [id])).rows[0];
+  if (!result) {
+    sendResponse(res, {
+      statusCode: httpStatus.NOT_FOUND,
+      success: false,
+      message: 'User does not exist',
+    });
+    return;
+  }
   sendResponse<IUser>(res, {
     statusCode: httpStatus.OK,
     success: true,

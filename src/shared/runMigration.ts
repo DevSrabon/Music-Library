@@ -1,11 +1,12 @@
 import createAlbumSchema from '../app/modules/album/album.model';
+import createSongSchema from '../app/modules/songs/song.model';
 import createUserSchema from '../app/modules/user/user.model';
 import db from './db';
 import { errorLogger, logger } from './logger';
 
 /**
  * Run db migrations
- * @returns void
+ * @returns Promise<void>
  */
 const runDbMigrations = async () => {
   logger.info('BEGIN DB MIGRATION');
@@ -16,6 +17,7 @@ const runDbMigrations = async () => {
 
     await client.query(createUserSchema);
     await client.query(createAlbumSchema);
+    await client.query(createSongSchema);
 
     await client.query('COMMIT');
 

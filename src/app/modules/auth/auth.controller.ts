@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import { Request, Response } from 'express';
+import { CookieOptions, Request, Response } from 'express';
 import httpStatus from 'http-status';
 import { Secret } from 'jsonwebtoken';
 import config from '../../../config';
@@ -43,9 +43,10 @@ const loginUser = catchAsync(async (req, res) => {
   );
 
   // set refresh token into cookie
-  const cookieOptions = {
+  const cookieOptions: CookieOptions = {
     secure: config.env === 'production',
     httpOnly: true,
+    expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
   };
 
   res.cookie('refreshToken', refreshToken, cookieOptions);

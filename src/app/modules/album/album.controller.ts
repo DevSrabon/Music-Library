@@ -12,22 +12,31 @@ import { IAlbum } from './album.interface';
 const insertIntoDB = rollbackAsync(async (req, res) => {
   const { artists_name, title, genre, release_year } = req.body;
 
+  const existingAlbumQuery = 'SELECT * FROM albums WHERE title = $1';
+  const existingAlbumResult = await db.query(existingAlbumQuery, [title]);
+
+  if (existingAlbumResult.rows.length > 0) {
+    sendResponse(res, {
+      statusCode: httpStatus.CONFLICT,
+      success: false,
+      message: 'An album with the same title already exists.',
+    });
+    return;
+  }
+
   const artistQuery = 'SELECT * FROM artists WHERE name = $1';
   const artistResult = await db.query(artistQuery, [artists_name]);
 
-  let artistId;
-  let artistName;
+  let artist;
   if (artistResult.rows.length === 0) {
     const insertArtistQuery =
       'INSERT INTO artists (name) VALUES ($1) RETURNING *';
     const insertArtistResult = await db.query(insertArtistQuery, [
       artists_name,
     ]);
-    artistId = insertArtistResult.rows[0].id;
-    artistName = insertArtistResult.rows[0].name;
+    artist = insertArtistResult.rows[0];
   } else {
-    artistId = artistResult.rows[0].id;
-    artistName = artistResult.rows[0].name;
+    artist = artistResult.rows[0];
   }
 
   const insertAlbumQuery = `
@@ -46,20 +55,19 @@ const insertIntoDB = rollbackAsync(async (req, res) => {
     INSERT INTO album_artists (album_id, artist_id)
     VALUES ($1, $2)
   `;
-  await db.query(insertAssociationQuery, [album.id, artistId]);
+  await db.query(insertAssociationQuery, [album.id, artist.id]);
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'Album created successfully',
-    data: { artist_id: artistId, artist_name: artistName, ...album },
+    data: { artist, ...album },
   });
 });
 
 const getAllFromDB = catchAsync(async (req, res) => {
   const paginationOptions = pick(req.query, paginationFields);
   const { searchTerm, ...filtersData } = pick(req.query, albumFilterableFields);
-  console.log('🚀 ~ getAllFromDB ~ searchTerm:', searchTerm);
   const { page, limit, skip, sortBy, sortOrder } =
     paginationHelpers.calculatePagination(paginationOptions);
 
@@ -92,7 +100,7 @@ const getAllFromDB = catchAsync(async (req, res) => {
     }
     if (Object.keys(filtersData).length > 0) {
       query += `${Object.keys(filtersData)
-        .map(key => `${key}='${filtersData[key]}'`)
+        .map(key => `LOWER(${key}) = LOWER('${filtersData[key]}')`)
         .join(` OR `)}`;
     }
   }
@@ -177,6 +185,14 @@ const deleteInDB = catchAsync(async (req, res) => {
   const { id } = req.params;
   const query = `DELETE FROM Albums WHERE id = $1 RETURNING id, title, genre, created_at, updated_at`;
   const result: IAlbum = (await db.query(query, [id])).rows[0];
+  if (!result) {
+    sendResponse(res, {
+      statusCode: httpStatus.NOT_FOUND,
+      success: false,
+      message: 'Album does not exist',
+    });
+    return;
+  }
   sendResponse<IAlbum>(res, {
     statusCode: httpStatus.OK,
     success: true,

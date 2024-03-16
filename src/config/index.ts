@@ -10,8 +10,8 @@ export default {
   database_url: process.env.DATABASE_URL,
   bcrypt_salt_rounds: process.env.BCRYPT_SALT_ROUNDS,
   jwt: {
-    secret: process.env.JWT_SECRET || '46546dg4frgrdgrgfg',
-    refresh_secret: process.env.JWT_REFRESH_SECRET || '54654sdf654esfe68454',
+    secret: process.env.JWT_SECRET,
+    refresh_secret: process.env.JWT_REFRESH_SECRET,
     expires_in: process.env.JWT_EXPIRES_IN || '1d',
     refresh_expires_in: process.env.JWT_REFRESH_EXPIRES_IN || '7d',
   },
