@@ -7,3 +7,6 @@ Sat Mar 16 2024 18:4:41 } [SB] info: Server running on port 5000
 Sat Mar 16 2024 18:31:25 } [SB] info: BEGIN DB MIGRATION
 Sat Mar 16 2024 18:31:26 } [SB] info: END DB MIGRATION
 Sat Mar 16 2024 18:31:26 } [SB] info: Server running on port 5000
+Sat Mar 16 2024 18:51:58 } [SB] info: BEGIN DB MIGRATION
+Sat Mar 16 2024 18:51:59 } [SB] info: END DB MIGRATION
+Sat Mar 16 2024 18:51:59 } [SB] info: Server running on port 5000
