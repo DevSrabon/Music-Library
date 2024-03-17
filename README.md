@@ -10,13 +10,13 @@ This is a music library system developed using Express.js, TypeScript, and Postg
 - Passwords are hashed for security.
 - Authentication is token-based using JWT.
 
-  2.Music Albums and Artists:
+2. Music Albums and Artists:
 
 - Authentic users can add music albums to the library.
 - Each album has a title, release year, and genre.
 - Each album can have multiple artists, and each artists can have multiple album, utilizing a many-to-many relationship.
 
-  3.Songs:
+3. Songs:
 
 - Authentic users can add individual songs to the library.
 - Each song has a title, duration, and is associated with an album.
@@ -61,6 +61,10 @@ JWT_EXPIRES_IN="1d"
 ```bash
 yarn dev
 ```
+
+# Entity Relation Diagram
+
+![alt text](https://github.com/DevSrabon/Music-Library/blob/[main]/music-erd.png?raw=true)
 
 # Schemas
 
