@@ -2,6 +2,25 @@
 
 This is a music library system developed using Express.js, TypeScript, and PostgreSQL as the database. The system allows users to register, log in, add music albums, artists, and individual songs to the library. Authentication is token-based (JWT) and all API endpoints are protected with access tokens.
 
+## Features
+
+1.User Authentication:
+
+- Users can register and log in securely.
+- Passwords are hashed for security.
+- Authentication is token-based using JWT.
+
+  2.Music Albums and Artists:
+
+- Authentic users can add music albums to the library.
+- Each album has a title, release year, and genre.
+- Each album can have multiple artists, and each artists can have multiple album, utilizing a many-to-many relationship.
+
+  3.Songs:
+
+- Authentic users can add individual songs to the library.
+- Each song has a title, duration, and is associated with an album.
+
 ## Installation Steps
 
 ### Follow these steps to clone and set up starter project:
@@ -43,11 +62,57 @@ JWT_EXPIRES_IN="1d"
 yarn start
 ```
 
+# Schemas
+
+```bash
+    CREATE TABLE IF NOT EXISTS users (
+        id SERIAL PRIMARY KEY,
+        username VARCHAR(100) NOT NULL,
+        email VARCHAR(255) UNIQUE NOT NULL,
+        password VARCHAR(255) NOT NULL,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+    );
+    CREATE TABLE IF NOT EXISTS albums (
+        id SERIAL PRIMARY KEY,
+        title VARCHAR(100) NOT NULL UNIQUE,
+        release_year VARCHAR(10) NOT NULL,
+        genre VARCHAR(50) NOT NULL,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+    );
+
+    CREATE TABLE IF NOT EXISTS artists (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(100) NOT NULL,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+    );
+
+
+    CREATE TABLE IF NOT EXISTS album_artists (
+        album_id INTEGER REFERENCES albums(id) ON DELETE CASCADE,
+        artist_id INTEGER REFERENCES artists(id) ON DELETE CASCADE,
+        PRIMARY KEY (album_id, artist_id)
+    );
+
+
+    CREATE TABLE IF NOT EXISTS songs (
+        id SERIAL PRIMARY KEY,
+        title VARCHAR(100) NOT NULL UNIQUE,
+        duration INTERVAL,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+        album_id INTEGER NOT NULL,
+        CONSTRAINT album_id_fk FOREIGN KEY (album_id) REFERENCES albums (id) ON DELETE CASCADE
+    );
+```
+
 # Api Endpoints
 
 ## Authentication
 
-- #### `POST /api/auth/login:` Log in an existing user.
+- #### `POST /api/v1/auth/login:` Log in an existing user.
 
 - Request Body
 
@@ -71,7 +136,7 @@ yarn start
     }
 ```
 
-- #### `POST /api/auth/refresh-token:` To retrive a new access token.
+- #### `POST /api/v1/auth/refresh-token:` To retrive a new access token.
 
 - Response Data
 
@@ -86,13 +151,13 @@ yarn start
     }
 ```
 
-[Note: All Api Endpoint are protected except `POST /api/v1/users`]()
+[Note: All Api Endpoint are protected except `POST /api/v1/v1/users`]()
 
 - To Access Private routes Please add headers `Key:`authorization `value:` Bearer your Access token
 
 ## User
 
-- #### `POST /api/users:` Create a user for register.
+- #### `POST /api/v1/users:` Create a user for register.
 
 - Request Body
 
@@ -121,7 +186,7 @@ yarn start
     }
 ```
 
-- #### `GET /api/v1/users:` Get all users.
+- #### `GET /api/v1/v1/users:` Get all users.
 
 - Response Data
 
@@ -147,7 +212,7 @@ yarn start
     }
 ```
 
-- #### `PATCH /api/users/:id:` Update a User
+- #### `PATCH /api/v1/users/:id:` Update a User
 
 - Request Body
 
@@ -174,7 +239,7 @@ yarn start
     }
 ```
 
-- #### `DELETE /api/users/:id:` Delete a User
+- #### `DELETE /api/v1/users/:id:` Delete a User
 
 - Response Data
 
@@ -195,7 +260,7 @@ yarn start
 
 ## Album
 
-- #### `POST /api/albums:` Create a album.
+- #### `POST /api/v1/albums:` Create a album.
 
 - Request Body
 
@@ -232,7 +297,7 @@ yarn start
     }
 ```
 
-- #### `GET /api/v1/albums:` Get all albums.
+- #### `GET /api/v1/v1/albums:` Get all albums.
 
 - Response Data
 
@@ -279,7 +344,7 @@ yarn start
     }
 ```
 
-- #### `PATCH /api/albums/:id:` Update a album
+- #### `PATCH /api/v1/albums/:id:` Update a album
 
 - Request Body
 
@@ -308,7 +373,7 @@ yarn start
     }
 ```
 
-- #### `DELETE /api/albums/:id:` Delete a album
+- #### `DELETE /api/v1/albums/:id:` Delete a album
 
 - Response Data
 
@@ -331,7 +396,7 @@ yarn start
 
 ## Artists
 
-- #### `POST /api/artists:` Create an artist.
+- #### `POST /api/v1/artists:` Create an artist.
 
 - Request Body
 
@@ -356,7 +421,7 @@ yarn start
     }
 ```
 
-- #### `GET /api/v1/artists:` Get all artists.
+- #### `GET /api/v1/v1/artists:` Get all artists.
 
 - Response Data
 
@@ -415,7 +480,7 @@ yarn start
     }
 ```
 
-- #### `PATCH /api/users/:id:` Update an artist
+- #### `PATCH /api/v1/users/:id:` Update an artist
 
 - Request Body
 
@@ -441,7 +506,7 @@ yarn start
     }
 ```
 
-- #### `DELETE /api/artists/:id:` Delete an artist
+- #### `DELETE /api/v1/artists/:id:` Delete an artist
 
 - Response Data
 
@@ -461,7 +526,7 @@ yarn start
 
 ## Songs
 
-- #### `POST /api/songs:` Create a song.
+- #### `POST /api/v1/songs:` Create a song.
 
 - Request Body
 
@@ -493,7 +558,7 @@ yarn start
     }
 ```
 
-- #### `GET /api/v1/songs:` Get all Songs.
+- #### `GET /api/v1/v1/songs:` Get all Songs.
 
 - Response Data
 
@@ -540,7 +605,7 @@ yarn start
         }
 ```
 
-- #### `PATCH /api/users/:id:` Update an artist
+- #### `PATCH /api/v1/users/:id:` Update an artist
 
 - Request Body
 
@@ -570,7 +635,7 @@ yarn start
     }
 ```
 
-- #### `DELETE /api/songs/:id:` Delete an artist
+- #### `DELETE /api/v1/songs/:id:` Delete an artist
 
 - Response Data
 
