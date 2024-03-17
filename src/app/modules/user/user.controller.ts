@@ -23,7 +23,7 @@ const insertIntoDB = catchAsync(async (req, res) => {
     result.password = undefined;
   }
   sendResponse<IUser>(res, {
-    statusCode: httpStatus.OK,
+    statusCode: httpStatus.CREATED,
     success: true,
     message: 'User created successfully',
     data: result,

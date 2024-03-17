@@ -1,0 +1,30 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\srabon\\lub\\logs\\winston\\successes\\.c955bddbc4b62f019d50d16bc59357ff71dc466c-audit.json",
+    "files": [
+        {
+            "date": 1710648932684,
+            "name": "D:\\srabon\\lub\\logs\\winston\\successes\\srabon-2024-17-03-10-success.log",
+            "hash": "54af6154ed110ffe5c310d5c646cfb80a3594b65d30b6d4fa2a1816c66c533ac"
+        },
+        {
+            "date": 1710653226189,
+            "name": "D:\\srabon\\lub\\logs\\winston\\successes\\srabon-2024-17-03-11-success.log",
+            "hash": "7ec2b073d0b56bf7d0fbb8982c48708c27bf6c2b4da84a2dff5be092283e3aad"
+        },
+        {
+            "date": 1710655384897,
+            "name": "D:\\srabon\\lub\\logs\\winston\\successes\\srabon-2024-17-03-12-success.log",
+            "hash": "96c452af6de30c5b93114475bb03c4585bedc915545bdaf0060fb8f19256e977"
+        },
+        {
+            "date": 1710658886800,
+            "name": "D:\\srabon\\lub\\logs\\winston\\successes\\srabon-2024-17-03-13-success.log",
+            "hash": "a6c8b9860a4fdd15f27169c32f6bc2fab203c36724b46511fee3ddd43dd24451"
+        }
+    ],
+    "hashType": "sha256"
+}

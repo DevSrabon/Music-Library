@@ -19,7 +19,7 @@ const insertIntoDB = rollbackAsync(async (req, res) => {
   const result = await db.query(query, [title, duration, album_id]);
 
   sendResponse<ISongs>(res, {
-    statusCode: httpStatus.OK,
+    statusCode: httpStatus.CREATED,
     success: true,
     message: 'song created successfully',
     data: result.rows[0],
@@ -32,7 +32,13 @@ const getAllFromDB = catchAsync(async (req, res) => {
   const { page, limit, skip, sortBy, sortOrder } =
     paginationHelpers.calculatePagination(paginationOptions);
 
-  let query = `SELECT s.id, s.title, s.duration, s.created_at, s.updated_at, jsonb_agg(jsonb_build_object('id', alb.id, 'title', alb.title, 'genre', alb.genre, 'release_year', alb.release_year, 'created_at', alb.created_at, 'updated_at', alb.updated_at)) AS albums FROM songs AS s LEFT JOIN albums AS alb ON s.album_id = alb.id`;
+  let query = `SELECT s.id, s.title, s.duration, s.created_at, s.updated_at,
+               jsonb_agg(jsonb_build_object('id', alb.id, 'title', alb.title, 'genre', alb.genre, 'release_year', alb.release_year, 'created_at', alb.created_at, 'updated_at', alb.updated_at)) AS albums,
+               jsonb_agg(jsonb_build_object('id', art.id, 'name', art.name, 'created_at', art.created_at, 'updated_at', art.updated_at)) AS artists
+               FROM songs AS s
+               LEFT JOIN albums AS alb ON s.album_id = alb.id
+               LEFT JOIN album_artists AS aa ON s.album_id = aa.album_id
+               LEFT JOIN artists AS art ON aa.artist_id = art.id`;
 
   if (Object.keys(filtersData).length > 0 || searchTerm) {
     query += ` WHERE `;
@@ -52,7 +58,7 @@ const getAllFromDB = catchAsync(async (req, res) => {
     }
   }
 
-  query += ` GROUP BY s.id, alb.id`;
+  query += ` GROUP BY s.id`;
 
   query += ` ORDER BY ${sortBy} ${sortOrder}`;
 
@@ -65,7 +71,7 @@ const getAllFromDB = catchAsync(async (req, res) => {
   sendResponse<ISongs[]>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'songs fetched successfully',
+    message: 'Songs fetched successfully',
     meta: {
       page,
       limit,

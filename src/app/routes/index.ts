@@ -22,11 +22,7 @@ const moduleRoutes = [
     route: ArtistsRoutes,
   },
   {
-    path: '/artists',
-    route: ArtistsRoutes,
-  },
-  {
-    path: '/song',
+    path: '/songs',
     route: SongRoutes,
   },
 ];

@@ -14,7 +14,21 @@ import { IArtists } from './artists.interface';
 
 const insertIntoDB = rollbackAsync(async (req, res) => {
   const { name, album_id } = req.body;
-
+  const artQuery = `SELECT * FROM artists WHERE name = $1`;
+  const isArtistExist = await db.query(artQuery, [name]);
+  if (isArtistExist.rows.length > 0) {
+    const albumQuery = `INSERT INTO album_artists (album_id, artist_id) VALUES ($1, $2) RETURNING *`;
+    const result = await db.query(albumQuery, [
+      album_id,
+      isArtistExist.rows[0].id,
+    ]);
+    sendResponse<IArtists>(res, {
+      statusCode: httpStatus.CREATED,
+      success: true,
+      message: 'Artist created successfully',
+      data: result.rows[0],
+    });
+  }
   const query = `
       WITH inserted_artist AS (
         INSERT INTO artists (name) VALUES ($1) RETURNING id
@@ -27,7 +41,7 @@ const insertIntoDB = rollbackAsync(async (req, res) => {
   const result = await db.query(query, [name, album_id]);
 
   sendResponse<IArtists>(res, {
-    statusCode: httpStatus.OK,
+    statusCode: httpStatus.CREATED,
     success: true,
     message: 'Artist created successfully',
     data: result.rows[0],
@@ -69,7 +83,6 @@ const getAllFromDB = catchAsync(async (req, res) => {
 
   query += ` LIMIT ${limit} OFFSET ${skip}`;
 
-  console.log('🚀 ~ getAllFromDB ~ query:', query);
   const result: IArtists[] = (await db.query(query))?.rows;
 
   const total = await db.query('SELECT COUNT(*) FROM Artists');
@@ -100,10 +113,12 @@ const updateInDB = catchAsync(async (req, res) => {
   });
 });
 
-const deleteInDB = catchAsync(async (req, res) => {
+const deleteInDB = rollbackAsync(async (req, res) => {
   const { id } = req.params;
   const query = `DELETE FROM artists WHERE id = $1 RETURNING *`;
   const result = await db.query(query, [id]);
+  const albArtQuery = `DELETE FROM album_artists WHERE artist_id = $1`;
+  await db.query(albArtQuery, [id]);
   if (!result.rows[0]) {
     sendResponse(res, {
       statusCode: httpStatus.NOT_FOUND,

@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 import httpStatus from 'http-status';
 import { paginationFields } from '../../../constants/pagination';
 import { paginationHelpers } from '../../../helpers/paginationHelpers';
@@ -58,7 +59,7 @@ const insertIntoDB = rollbackAsync(async (req, res) => {
   await db.query(insertAssociationQuery, [album.id, artist.id]);
 
   sendResponse(res, {
-    statusCode: httpStatus.OK,
+    statusCode: httpStatus.CREATED,
     success: true,
     message: 'Album created successfully',
     data: { artist, ...album },
@@ -79,7 +80,7 @@ const getAllFromDB = catchAsync(async (req, res) => {
       alb.release_year,
       alb.created_at,
       alb.updated_at,
-      jsonb_agg(jsonb_build_object('id', art.id, 'name', art.name)) AS artists
+      jsonb_agg(jsonb_build_object('id', art.id, 'name', art.name, 'created_at', art.created_at, 'updated_at', art.updated_at)) AS artists
     FROM
       albums alb
     JOIN
@@ -127,7 +128,7 @@ const getAllFromDB = catchAsync(async (req, res) => {
 
 const updateInDB = catchAsync(async (req, res) => {
   const { id } = req.params;
-  const { artists_name, updateData } = req.body;
+  const { artists_name, ...updateData } = req.body;
   const updateValues = Object.values(updateData);
 
   //   dynamic update query
@@ -137,8 +138,8 @@ const updateInDB = catchAsync(async (req, res) => {
     .concat(', updated_at = NOW()');
 
   const query = `UPDATE Albums SET ${updateColumns} WHERE id = ${id} RETURNING *`;
-
-  const result: IAlbum = (await db.query(query, [...updateValues])).rows[0];
+  let result;
+  result = (await db.query(query, [...updateValues])).rows[0];
 
   if (!artists_name) {
     sendResponse<IAlbum | null>(res, {
@@ -181,10 +182,12 @@ const updateInDB = catchAsync(async (req, res) => {
   });
 });
 
-const deleteInDB = catchAsync(async (req, res) => {
+const deleteInDB = rollbackAsync(async (req, res) => {
   const { id } = req.params;
   const query = `DELETE FROM Albums WHERE id = $1 RETURNING id, title, genre, created_at, updated_at`;
   const result: IAlbum = (await db.query(query, [id])).rows[0];
+  const albArtQuery = `DELETE FROM album_artists WHERE album_id = $1`;
+  await db.query(albArtQuery, [id]);
   if (!result) {
     sendResponse(res, {
       statusCode: httpStatus.NOT_FOUND,

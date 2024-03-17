@@ -41,7 +41,7 @@ const updateAlbumJoiSchema: ObjectSchema<IAlbum> = Joi.object({
   title: Joi.string().min(3).max(100).optional(),
   genre: Joi.string().optional(),
   release_year: Joi.string()
-    .equal(4)
+    .length(4)
     .messages({
       'string.length': 'release year must be exactly 4 characters long',
       'any.required': 'release year is required',

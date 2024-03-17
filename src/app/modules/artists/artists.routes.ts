@@ -1,20 +1,22 @@
 import express from 'express';
 import auth from '../../middlewares/auth';
 import { ArtistsController } from './artists.controller';
+import validateRequest from '../../middlewares/validateRequest';
+import { ArtistsValidation } from './artists.validation';
 
 const router = express.Router();
 // auth middleware
 router.use(auth());
 router.post(
   '/',
-  // validateRequest(ArtistsValidation.createArtistsJoiSchema),
+  validateRequest(ArtistsValidation.createArtistsJoiSchema),
   ArtistsController.insertIntoDB,
 );
 router.get('/', ArtistsController.getAllFromDB);
 
 router.patch(
   '/:id',
-  // validateRequest(ArtistsValidation.updateArtistsJoiSchema),
+  validateRequest(ArtistsValidation.updateArtistsJoiSchema),
   ArtistsController.updateInDB,
 );
 router.delete('/:id', ArtistsController.deleteInDB);
