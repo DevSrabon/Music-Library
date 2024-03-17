@@ -64,7 +64,7 @@ yarn dev
 
 # Entity Relation Diagram
 
-![alt text](https://github.com/DevSrabon/Music-Library/blob/[main]/music-erd.png?raw=true)
+![alt text](https://github.com/DevSrabon/Music-Library/blob/main/music-erd.png?raw=true)
 
 # Schemas
 
