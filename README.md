@@ -59,7 +59,7 @@ JWT_EXPIRES_IN="1d"
 4. `Run project:` finally, run this project by using following command:
 
 ```bash
-yarn start
+yarn dev
 ```
 
 # Schemas
